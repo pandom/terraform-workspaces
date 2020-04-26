@@ -40,3 +40,4 @@ variable template_repository_name {
 variable aws_env_var {
   type = map
   default = {}
+}
