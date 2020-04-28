@@ -33,7 +33,7 @@ module "terraform-aws-core" {
 module "hashicat-vsphere" {
   source = "app.terraform.io/grantorchard/workspace/tfe"
   providers = {
-    github = github.hashicorp
+    github = github.personal
   }
   repository_name = "hashicat-vsphere"
   oauth_token_id = var.oauth_token_id
