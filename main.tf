@@ -47,7 +47,7 @@ module "terraform-aws-aviatrix" {
   }
   repository_name = "terraform-aws-aviatrix"
   oauth_token_id = var.oauth_token_id
-  env_var = var.vsphere_env_var
+  env_var = var.aws_env_var
 }
 
 # ami-093acc21a521ba0e5
