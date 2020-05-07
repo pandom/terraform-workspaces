@@ -40,7 +40,7 @@ module "hashicat-vsphere" {
   env_var = var.vsphere_env_var
 }
 
-module "hashicat-vsphere" {
+module "terraform-aws-aviatrix" {
   source = "app.terraform.io/grantorchard/workspace/tfe"
   providers = {
     github = github.personal
