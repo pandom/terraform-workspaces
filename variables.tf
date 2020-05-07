@@ -5,7 +5,7 @@ variable tfe_workspace_name {
 
 variable tfe_org_name {
   type = string
-  default = "grantorchard"
+  default = "burkey"
 }
 
 variable tfe_auto_apply {
@@ -29,7 +29,7 @@ variable repository_private {
 
 variable template_repository_owner {
   type = string
-  default = "grantorchard"
+  default = "Anthony Burke"
 }
 
 variable template_repository_name {
@@ -54,24 +54,3 @@ variable aws_env_var {
   }
 }
 
-variable vsphere_env_var {
-  type = map
-  default = {
-    "VSPHERE_USER" = {
-      "value" = "",
-      "sensitive" = false
-    },
-    "VSPHERE_PASSWORD" = {
-      "value" = "",
-      "sensitive" = true
-    },
-    "VSPHERE_SERVER" = {
-      "value" = "",
-      "sensitive" = false
-    },
-    "VSPHERE_ALLOW_UNVERIFIED_SSL" = {
-      "value" = true,
-      "sensitive" = false
-    }
-  }
-}
