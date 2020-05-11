@@ -5,14 +5,14 @@ provider "github" {
   version    = "2.4.0"
 }
 
-provider "github" {
-  alias = "hashicorp"
-  organization = "hashicorp"
-}
+# provider "github" {
+#   alias = "hashicorp"
+#   organization = "hashicorp"
+# }
 
 module "terraform-vault-fmg" {
   source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.14"
+  version = "0.0.15"
   providers = {
     github = github.personal
   }
@@ -23,7 +23,7 @@ module "terraform-vault-fmg" {
 
 module "terraform-nomad-jobs" {
   source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.14"
+  version = "0.0.15"
   providers = {
     github = github.personal
   }
@@ -34,7 +34,7 @@ module "terraform-nomad-jobs" {
 
 module "personal-dockerfiles" {
   source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.14"
+  version = "0.0.15"
   providers = {
     github = github.personal
   }
