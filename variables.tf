@@ -54,3 +54,16 @@ variable aws_env_var {
   }
 }
 
+variable nomad_env_var {
+  default = {
+    "NOMAD_ADDR" = {
+      "value" = "http://nomad:4646",
+      "sensitive" = false
+    },
+    "NOMAD_TOKEN" = {
+      "value" = "",
+      "sensitive" = false
+    }
+  }
+}
+
