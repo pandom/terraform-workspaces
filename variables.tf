@@ -1,6 +1,6 @@
 variable tfe_workspace_name {
   type = string
-  default = ""
+  default = "terraform-workspaces"
 }
 
 variable tfe_org_name {
