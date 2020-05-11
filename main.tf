@@ -11,7 +11,7 @@ provider "github" {
 }
 
 module "terraform-vault-fmg" {
-  source = "app.terraform.io/pandom/workspace/tfe"
+  source = "app.terraform.io/burkey/workspace/tfe"
   providers = {
     github = github.personal
   }
@@ -21,7 +21,7 @@ module "terraform-vault-fmg" {
 }
 
 module "terraform-nomad-jobs" {
-  source = "app.terraform.io/pandom/workspace/tfe"
+  source = "app.terraform.io/burkey/workspace/tfe"
   providers = {
     github = github.personal
   }
@@ -31,7 +31,7 @@ module "terraform-nomad-jobs" {
 }
 
 module "personal-dockerfiles" {
-  source = "app.terraform.io/pandom/workspace/tfe"
+  source = "app.terraform.io/burkey/workspace/tfe"
   providers = {
     github = github.personal
   }
