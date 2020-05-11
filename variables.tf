@@ -1,6 +1,6 @@
 variable tfe_workspace_name {
   type = string
-  default = "terraform-workspaces"
+  default = ""
 }
 
 variable tfe_org_name {
@@ -61,8 +61,8 @@ variable nomad_env_var {
       "sensitive" = false
     },
     "NOMAD_TOKEN" = {
-      "value" = "",
-      "sensitive" = false
+      "value" = "placeholder",
+      "sensitive" = true
     }
   }
 }
