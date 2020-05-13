@@ -57,11 +57,11 @@ variable aws_env_var {
 variable nomad_env_var {
   default = {
     "NOMAD_ADDR" = {
-      "value" = "http://nomad:4646",
+      "value" = "http://burkey-pa6px8sygq4zxxlm7-nomad-1784565306.ap-southeast-2.elb.amazonaws.com:4646",
       "sensitive" = false
     },
     "NOMAD_TOKEN" = {
-      "value" = "placeholder",
+      "value" = "6d13d9f8-053f-a1d0-0713-3f2495c8748f",
       "sensitive" = true
     }
   }
