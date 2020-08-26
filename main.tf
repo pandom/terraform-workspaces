@@ -18,7 +18,6 @@ module "terraform-vault-fmg" {
   }
   repository_name = "terraform-vault-fmg"
   oauth_token_id = var.oauth_token_id
-  env_var = var.aws_env_var
 }
 
 module "terraform-azure-vault" {
@@ -29,7 +28,6 @@ module "terraform-azure-vault" {
   }
   repository_name = "terraform-azure-vault"
   oauth_token_id = var.oauth_token_id
-  env_var = var.aws_env_var
 }
 
 module "terraform-aws-vault" {
@@ -40,7 +38,6 @@ module "terraform-aws-vault" {
   }
   repository_name = "terraform-aws-vault"
   oauth_token_id = var.oauth_token_id
-  env_var = var.aws_env_var
 }
 
 module "terraform-nomad-jobs" {
@@ -51,9 +48,9 @@ module "terraform-nomad-jobs" {
   }
   repository_name = "terraform-nomad-jobs"
   oauth_token_id = var.oauth_token_id
-  env_var = merge(var.aws_env_var, var.nomad_env_var)
 }
 
+#env_var = merge(var.aws_env_var, var.nomad_env_var)
 module "personal-dockerfiles" {
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.15"
@@ -62,7 +59,6 @@ module "personal-dockerfiles" {
   }
   repository_name = "personal-dockerfiles"
   oauth_token_id = var.oauth_token_id
-  env_var = var.aws_env_var
 }
 
 
