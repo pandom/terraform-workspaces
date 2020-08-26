@@ -63,15 +63,5 @@ module "personal-dockerfiles" {
   env_var = var.aws_env_var
 }
 
-module "personal-dockerfiles" {
-  source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.15"
-  providers = {
-    github = github.personal
-  }
-  repository_name = "personal-dockerfiles"
-  oauth_token_id = var.oauth_token_id
-  env_var = var.aws_env_var
-}
 
 
