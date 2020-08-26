@@ -3,7 +3,6 @@ provider "github" {
   individual = false
   organization = "pandom"
   version    = "2.4.0"
-  token = var.github_token
 }
 
 # provider "github" {
