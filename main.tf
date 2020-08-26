@@ -29,6 +29,7 @@ module "terraform-azure-vault" {
   }
   repository_name = "terraform-azure-vault"
   oauth_token_id = var.oauth_token_id
+  env_var = var.aws_env_var
 }
 
 module "terraform-aws-vault" {
@@ -39,6 +40,7 @@ module "terraform-aws-vault" {
   }
   repository_name = "terraform-aws-vault"
   oauth_token_id = var.oauth_token_id
+  env_var = var.aws_env_var
 }
 
 module "terraform-nomad-jobs" {
