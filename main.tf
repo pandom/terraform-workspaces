@@ -16,6 +16,7 @@ module "terraform-vault-fmg" {
   providers = {
     github = github.personal
   }
+  tfe_workspace_name = "terraform-vault-fmg"
   repository_name = "terraform-vault-fmg"
   oauth_token_id = var.oauth_token_id
 }
@@ -27,6 +28,7 @@ module "terraform-azure-vault" {
     github = github.personal
   }
   repository_name = "terraform-azure-vault"
+  tfe_workspace_name = "terraform-azure-vault"
   oauth_token_id = var.oauth_token_id
 }
 
@@ -37,6 +39,7 @@ module "terraform-aws-vault" {
     github = github.personal
   }
   repository_name = "terraform-aws-vault"
+  tfe_workspace_name = "terraform-aws-vault"
   oauth_token_id = var.oauth_token_id
 }
 
