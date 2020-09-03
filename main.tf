@@ -13,7 +13,7 @@ provider "github" {
 
 module "terraform-vault-fmg" {
   source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.15"
+  version = "0.0.16"
   providers = {
     github = github.personal
   }
