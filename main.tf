@@ -3,7 +3,7 @@ provider "github" {
   individual = false
   organization = "pandom"
   version    = "2.4.0"
-  token      = "${var.github_token}"
+  token      = var.github_token
 }
 
 # provider "github" {
@@ -19,7 +19,7 @@ module "terraform-vault-fmg" {
   }
   repository_name = "terraform-vault-fmg"
   oauth_token_id = var.oauth_token_id
-  env_var = var.azure_env_Var
+  env_var = var.azure_env_var
 }
 
 module "tf-azure-vault-prod" {
@@ -30,7 +30,7 @@ module "tf-azure-vault-prod" {
   }
   repository_name = "tf-azure-vault"
   oauth_token_id = var.oauth_token_id
-  env_var = merge(var.azure_env_Var, var.azure_location_var)
+  env_var = merge(var.azure_env_var, var.azure_location_var)
 }
 
 module "tf-azure-vault-dev" {
@@ -41,7 +41,7 @@ module "tf-azure-vault-dev" {
   }
   repository_name = "tf-azure-vault-dev"
   oauth_token_id = var.oauth_token_id
-  env_var = merge(var.azure_env_Var, var.azure_location_var)
+  env_var = merge(var.azure_env_var, var.azure_location_var)
 }
 
 module "tf-aws-vault-dev" {
@@ -52,7 +52,7 @@ module "tf-aws-vault-dev" {
   }
   repository_name = "tf-aws-vault"
   oauth_token_id = var.oauth_token_id
-  env_var = var.azure_env_Var
+  env_var = var.azure_env_var
   tf_var = var.ssh_public_key
 }
 
@@ -64,7 +64,7 @@ module "tf-nomad-jobs" {
   }
   repository_name = "tf-nomad-jobs"
   oauth_token_id = var.oauth_token_id
-  env_var = merge(var.azure_env_Var, var.nomad_env_var)
+  env_var = merge(var.azure_env_var, var.nomad_env_var)
 }
 
 
