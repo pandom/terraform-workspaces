@@ -1,3 +1,7 @@
+variable azure_location_var {
+  type = string
+  default = "australiasoutheast"
+}
 variable tfe_workspace_name {
   type = string
   default = ""
@@ -6,6 +10,10 @@ variable tfe_workspace_name {
 variable tfe_org_name {
   type = string
   default = "burkey"
+}
+
+variable github_token {
+  type = string
 }
 
 variable tfe_auto_apply {
@@ -37,18 +45,35 @@ variable template_repository_name {
   default = "terraform-repository-template"
 }
 
-variable aws_env_var {
+variable azure_env_var {
   default = {
-    "AWS_REGION" = {
-      "value" = "ap-southeast-2",
-      "sensitive" = false
-    },
-    "AWS_ACCESS_KEY_ID" = {
+    "ARM_SUBSCRIPTION_ID" = {
       "value" = "",
       "sensitive" = false
     },
-    "AWS_SECRET_ACCESS_KEY" = {
+    "ARM_TENANT_ID" = {
       "value" = "",
+      "sensitive" = true
+    },
+    "ARM_CLIENT_ID" = {
+      "value" = "",
+      "sensitive" = true
+    },
+     "ARM_CLIENT_ID" = {
+      "value" = "",
+      "sensitive" = true
+    },
+    "ARM_CLIENT_SECRET" = {
+      "value" = "",
+      "sensitive" = true
+    }
+  }
+}
+
+variable terraform_agent_var {
+  default = {
+    "TFC_AGENT_TOKEN" = {
+      "values" = "4Upkf3rSLvmBzQ.atlasv1.f2YdMgyB3dl5xzhrk8V1jVonKm2PpWbYKqZRPcsMp5SqHWVcUGXLRuvlqyqVxe2li9U",
       "sensitive" = true
     }
   }
@@ -57,12 +82,21 @@ variable aws_env_var {
 variable nomad_env_var {
   default = {
     "NOMAD_ADDR" = {
-      "value" = "http://burkey-pa6px8sygq4zxxlm7-nomad-1784565306.ap-southeast-2.elb.amazonaws.com:4646",
+      "value" = "http://localhost:4646",
       "sensitive" = false
     },
     "NOMAD_TOKEN" = {
-      "value" = "6d13d9f8-053f-a1d0-0713-3f2495c8748f",
+      "value" = "",
       "sensitive" = true
+    }
+  }
+}
+
+variable ssh_public_key {
+  default = {
+    "ssh_public_key" = {
+      "value" = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC+uueOxI5qNTksG2x/lTbbjPtzbW3++iH5CBQWKBojVP5qA/cVCOH8SnT08uQeN+Jt+zG0CXRDu9mC9ISDTLOwcjifvx35eI12FqmPnrDIMlmUjTH/TxHRfj1EJ2TvcJs77KZhAH8EmOvnr7ep2MkTYafLe9N6MCnYICH261jaJS0SrmDo0g6O8tdme9xgAwRHx1f6b750pHsuZ96tRbHYK/sYCjDauwc64qTYX5CoEDWNUhSHesmFgcB1zwZJ+Wxxdb7hQBE7aF0Y3AiRqlsqyn1k+SCn2TpjZIl2tgraJwCsnfEboSe6oOIetGS4Ht4W5l4xDMqrC1Ari4IRncsovnDlqQ4Q4Ib8E5mOcy2dF9hj2LUy6Cpn8xCFs5wr0sRBJWt0w324px8qjMptsRPQqhVGpUXorCJSOst0ypE9FDMTMJCLMCCf6PxzFZvL4sY80v6gD4bcALxyZ2H4vuBoNqDhYt63R2Eyg46UlIuuTq3o51K6xwiV0r+zSXsfNf3byJF1HkakXtiBpxcrXtIKcwQJflgbcSPavGsGAU8zGBEpf9ukV2DoFTUQf80PRU/+Tf2Xu0V3o1EFCyM7CaTZ4YkJk7rD/QFISB9euvdQLr+pt4/he9f21scuNf8pQzHooT0WOWnl5HpkqiUppwX6ELUXLSnMHFxUnzDfa3fsww==",
+      "sensitive" = "false"
     }
   }
 }

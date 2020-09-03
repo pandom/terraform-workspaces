@@ -3,6 +3,7 @@ provider "github" {
   individual = false
   organization = "pandom"
   version    = "2.4.0"
+  token
 }
 
 # provider "github" {
@@ -16,53 +17,56 @@ module "terraform-vault-fmg" {
   providers = {
     github = github.personal
   }
-  tfe_workspace_name = "terraform-vault-fmg"
   repository_name = "terraform-vault-fmg"
   oauth_token_id = var.oauth_token_id
+  env_var = var.azure_env_Var
 }
 
-module "terraform-azure-vault" {
+module "tf-azure-vault-prod" {
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.15"
   providers = {
     github = github.personal
   }
-  repository_name = "terraform-azure-vault"
-  tfe_workspace_name = "terraform-azure-vault"
+  repository_name = "tf-azure-vault"
   oauth_token_id = var.oauth_token_id
+  env_var = merge(var.azure_env_Var, var.azure_location_var)
 }
 
-module "terraform-aws-vault" {
+module "tf-azure-vault-dev" {
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.15"
   providers = {
     github = github.personal
   }
-  repository_name = "terraform-aws-vault"
-  tfe_workspace_name = "terraform-aws-vault"
+  repository_name = "tf-azure-vault-dev"
   oauth_token_id = var.oauth_token_id
+  env_var = merge(var.azure_env_Var, var.azure_location_var)
 }
 
-module "terraform-nomad-jobs" {
+module "tf-aws-vault-dev" {
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.15"
   providers = {
     github = github.personal
   }
-  repository_name = "terraform-nomad-jobs"
+  repository_name = "tf-aws-vault"
   oauth_token_id = var.oauth_token_id
+  env_var = var.azure_env_Var
+  tf_var = var.ssh_public_key
 }
 
-#env_var = merge(var.aws_env_var, var.nomad_env_var)
-module "personal-dockerfiles" {
+module "tf-nomad-jobs" {
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.15"
   providers = {
     github = github.personal
   }
-  repository_name = "personal-dockerfiles"
+  repository_name = "tf-nomad-jobs"
   oauth_token_id = var.oauth_token_id
+  env_var = merge(var.azure_env_Var, var.nomad_env_var)
 }
+
 
 
 
