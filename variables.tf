@@ -48,6 +48,7 @@ variable azure_location_var {
       "value" = "australiasoutheast",
       "hcl" = true
     }
+  }
 }
 
 variable azure_env_var {
