@@ -80,15 +80,15 @@ variable azure_env_var {
   }
 }
 
-variable terraform_agent_var {
-  default = {
-    "TFC_AGENT_TOKEN" = {
-      "value" = "4Upkf3rSLvmBzQ.atlasv1.f2YdMgyB3dl5xzhrk8V1jVonKm2PpWbYKqZRPcsMp5SqHWVcUGXLRuvlqyqVxe2li9U",
-      "sensitive" = true,
-      "hcl" = false
-    }
-  }
-}
+// variable terraform_agent_var {
+//   default = {
+//     "TFC_AGENT_TOKEN" = {
+//       "value" = "",
+//       "sensitive" = true,
+//       "hcl" = false
+//     }
+//   }
+// }
 
 variable nomad_env_var {
   default = {
