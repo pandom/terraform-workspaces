@@ -68,8 +68,7 @@ variable azure_env_var {
     "ARM_CLIENT_SECRET" = {
       "value" = "",
       "sensitive" = true
-    },
-    "
+    }
   }
 }
 
