@@ -57,7 +57,17 @@ module "tf-aws-vault-dev" {
   repository_name = "tf-aws-vault"
   oauth_token_id = var.oauth_token_id
   env_var = var.azure_env_var
-  // tf_var = merge(var.ssh_public_key, var.azure_location_var)
+  tf_var = merge(var.ssh_public_key, var.azure_location_var)
+  tf_var = merge({
+    "ssh_public_key" = {
+      "value" = var.ssh_public_key,
+      "sensitive" = false
+    },
+    "location" = {
+      "value" = var.azure_location_var,
+      "sensitive" = false
+    }
+  }
 }
 
 module "tf-nomad-jobs" {

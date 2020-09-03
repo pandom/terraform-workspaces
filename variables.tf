@@ -78,7 +78,7 @@ variable azure_env_var {
 variable terraform_agent_var {
   default = {
     "TFC_AGENT_TOKEN" = {
-      "values" = "4Upkf3rSLvmBzQ.atlasv1.f2YdMgyB3dl5xzhrk8V1jVonKm2PpWbYKqZRPcsMp5SqHWVcUGXLRuvlqyqVxe2li9U",
+      "value" = "4Upkf3rSLvmBzQ.atlasv1.f2YdMgyB3dl5xzhrk8V1jVonKm2PpWbYKqZRPcsMp5SqHWVcUGXLRuvlqyqVxe2li9U",
       "sensitive" = true
     }
   }
