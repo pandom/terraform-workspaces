@@ -57,7 +57,7 @@ module "tf-aws-vault-dev" {
   repository_name = "tf-aws-vault"
   oauth_token_id = var.oauth_token_id
   env_var = var.azure_env_var
-  tf_var = merge(var.ssh_public_key, var.azure_location_var)
+  // tf_var = merge(var.ssh_public_key, var.azure_location_var)
 }
 
 module "tf-nomad-jobs" {
@@ -68,7 +68,7 @@ module "tf-nomad-jobs" {
   }
   repository_name = "tf-nomad-jobs"
   oauth_token_id = var.oauth_token_id
-  env_var = merge(var.azure_env_var, var.nomad_env_var)
+  // env_var = merge(var.azure_env_var, var.terraform_agent_var, var.nomad_env_var)
 }
 
 
