@@ -45,8 +45,7 @@ variable template_repository_name {
 variable azure_location_var {
   default = {
     "LOCATION" = {
-      "value" = "australiasoutheast",
-      "hcl" = true
+      "value" = "australiasoutheast,
     }
   }
 }
