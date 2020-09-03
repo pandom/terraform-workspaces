@@ -26,7 +26,7 @@ module "terraform-vault-fmg" {
 
 module "tf-azure-vault-prod" {
   source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.15"
+  version = "0.0.16"
   providers = {
     github = github.personal
   }
@@ -38,7 +38,7 @@ module "tf-azure-vault-prod" {
 
 module "tf-azure-vault-dev" {
   source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.15"
+  version = "0.0.16"
   providers = {
     github = github.personal
   }
@@ -50,7 +50,7 @@ module "tf-azure-vault-dev" {
 
 module "tf-aws-vault-dev" {
   source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.15"
+  version = "0.0.16"
   providers = {
     github = github.personal
   }
@@ -62,7 +62,7 @@ module "tf-aws-vault-dev" {
 
 module "tf-nomad-jobs" {
   source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.15"
+  version = "0.0.16"
   providers = {
     github = github.personal
   }
