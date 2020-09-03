@@ -1,7 +1,4 @@
-variable azure_location_var {
-  type = string
-  default = "australiasoutheast"
-}
+
 variable tfe_workspace_name {
   type = string
   default = ""
@@ -45,6 +42,11 @@ variable template_repository_name {
   default = "terraform-repository-template"
 }
 
+variable azure_location_var {
+  type = string
+  default = "australiasoutheast"
+}
+
 variable azure_env_var {
   default = {
     "ARM_SUBSCRIPTION_ID" = {
@@ -66,7 +68,8 @@ variable azure_env_var {
     "ARM_CLIENT_SECRET" = {
       "value" = "",
       "sensitive" = true
-    }
+    },
+    "
   }
 }
 
