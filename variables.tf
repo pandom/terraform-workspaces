@@ -17,7 +17,7 @@ variable tfe_auto_apply {
   type = bool
   default = true
 }
-
+#this is your github personal token
 variable oauth_token_id {
   type = string
 }
@@ -54,23 +54,28 @@ variable azure_env_var {
   default = {
     "ARM_SUBSCRIPTION_ID" = {
       "value" = "",
-      "sensitive" = false
+      "sensitive" = false,
+      "hcl" = false
     },
     "ARM_TENANT_ID" = {
       "value" = "",
-      "sensitive" = true
+      "sensitive" = true,
+      "hcl" = false
     },
     "ARM_CLIENT_ID" = {
       "value" = "",
-      "sensitive" = true
+      "sensitive" = true,
+      "hcl" = false
     },
      "ARM_CLIENT_ID" = {
       "value" = "",
-      "sensitive" = true
+      "sensitive" = true,
+      "hcl" = false
     },
     "ARM_CLIENT_SECRET" = {
       "value" = "",
-      "sensitive" = true
+      "sensitive" = true,
+      "hcl" = false
     }
   }
 }
@@ -79,7 +84,8 @@ variable terraform_agent_var {
   default = {
     "TFC_AGENT_TOKEN" = {
       "value" = "4Upkf3rSLvmBzQ.atlasv1.f2YdMgyB3dl5xzhrk8V1jVonKm2PpWbYKqZRPcsMp5SqHWVcUGXLRuvlqyqVxe2li9U",
-      "sensitive" = true
+      "sensitive" = true,
+      "hcl" = false
     }
   }
 }
