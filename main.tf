@@ -32,7 +32,7 @@ module "tf-azure-vault-prod" {
   }
   repository_name = "tf-azure-vault"
   oauth_token_id = var.oauth_token_id
-   env_var = var.azure_env_var
+  env_var = var.azure_env_var
   tf_var = var.azure_location_var
 }
 
@@ -45,7 +45,7 @@ module "tf-azure-vault-dev" {
   repository_name = "tf-azure-vault-dev"
   oauth_token_id = var.oauth_token_id
   env_var = var.azure_env_var
-  tf_var = merge(var.azure_location_var, var.azure_env_var)
+  tf_var = var.azure_location_var
 }
 
 module "tf-aws-vault-dev" {
