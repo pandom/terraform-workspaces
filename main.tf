@@ -1,17 +1,10 @@
 terraform {
   required_providers {
     github = {
-      # The "hashicorp" namespace is the new home for the HashiCorp-maintained
-      # provider plugins.
-      #
-      # source is not required for the hashicorp/* namespace as a measure of
-      # backward compatibility for commonly-used providers, but recommended for
-      # explicitness.
       alias = "personal"
       organization = "pandom"
       source  = "hashicorp/azurerm"
       version = "~> 2.12"
-      token   = var.github_token
     }
   }
 }
@@ -36,6 +29,7 @@ module "terraform-vault-fmg" {
   version = "0.0.16"
   providers = {
     github = github.personal
+    token   = var.github_token
   }
   repository_name = "terraform-vault-fmg"
   oauth_token_id = var.oauth_token_id
@@ -49,6 +43,7 @@ module "tf-azure-vault-prod" {
   version = "0.0.16"
   providers = {
     github = github.personal
+    token   = var.github_token
   }
   repository_name = "tf-azure-vault"
   oauth_token_id = var.oauth_token_id
@@ -61,6 +56,7 @@ module "tf-azure-vault-dev" {
   version = "0.0.16"
   providers = {
     github = github.personal
+    token   = var.github_token
   }
   repository_name = "tf-azure-vault-dev"
   oauth_token_id = var.oauth_token_id
@@ -73,6 +69,7 @@ module "tf-aws-vault-dev" {
   version = "0.0.16"
   providers = {
     github = github.personal
+    token   = var.github_token
   }
   repository_name = "tf-aws-vault"
   oauth_token_id = var.oauth_token_id
@@ -85,6 +82,7 @@ module "tf-nomad-jobs" {
   version = "0.0.16"
   providers = {
     github = github.personal
+    token   = var.github_token
   }
   repository_name = "tf-nomad-jobs"
   oauth_token_id = var.oauth_token_id
