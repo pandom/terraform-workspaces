@@ -3,7 +3,7 @@ terraform {
     github = {
       alias = "personal"
       organization = "pandom"
-      source  = "hashicorp/azurerm"
+      source  = "hashicorp/github"
       version = "~> 2.12"
     }
   }
