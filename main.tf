@@ -2,6 +2,7 @@ provider "github" {
   alias = "personal"
   individual = false
   organization = "pandom"
+  source = "hashicorp/github"
   version    = "2.4.0"
   token      = var.github_token
 }
@@ -12,6 +13,7 @@ provider "github" {
 # }
 
 module "terraform-vault-fmg" {
+  
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.16"
   providers = {
