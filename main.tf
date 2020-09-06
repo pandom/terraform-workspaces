@@ -1,7 +1,6 @@
 terraform {
   required_providers {
     github = {
-      alias = "personal"
       organization = "pandom"
       source  = "hashicorp/github"
     }
@@ -27,7 +26,6 @@ module "terraform-vault-fmg" {
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.16"
   providers = {
-    github = github.personal
     token   = var.github_token
   }
   repository_name = "terraform-vault-fmg"
@@ -41,7 +39,6 @@ module "tf-azure-vault-prod" {
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.16"
   providers = {
-    github = github.personal
     token   = var.github_token
   }
   repository_name = "tf-azure-vault"
@@ -54,7 +51,6 @@ module "tf-azure-vault-dev" {
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.16"
   providers = {
-    github = github.personal
     token   = var.github_token
   }
   repository_name = "tf-azure-vault-dev"
@@ -67,7 +63,6 @@ module "tf-aws-vault-dev" {
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.16"
   providers = {
-    github = github.personal
     token   = var.github_token
   }
   repository_name = "tf-aws-vault"
@@ -80,7 +75,6 @@ module "tf-nomad-jobs" {
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.16"
   providers = {
-    github = github.personal
     token   = var.github_token
   }
   repository_name = "tf-nomad-jobs"
