@@ -4,7 +4,6 @@ terraform {
       alias = "personal"
       organization = "pandom"
       source  = "hashicorp/github"
-      version = "~> 2.12"
     }
   }
 }
