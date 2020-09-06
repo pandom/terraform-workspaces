@@ -1,11 +1,29 @@
-provider "github" {
-  alias = "personal"
-  individual = true
-  organization = "pandom"
+terraform {
+  required_providers {
+    github = {
+      # The "hashicorp" namespace is the new home for the HashiCorp-maintained
+      # provider plugins.
+      #
+      # source is not required for the hashicorp/* namespace as a measure of
+      # backward compatibility for commonly-used providers, but recommended for
+      # explicitness.
+      alias = "personal"
+      organization = "pandom"
+      source  = "hashicorp/azurerm"
+      version = "~> 2.12"
+      token   = var.github_token
+    }
+  }
+}
+
+// provider "github" {
+//   alias = "personal"
+  // individual = true
+  // organization = "pandom"
   // source = "hashicorp/github"
   // version    = "2.4.0"
-  token      = var.github_token
-}
+//   token      = var.github_token
+// }
 
 # provider "github" {
 #   alias = "hashicorp"
