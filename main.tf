@@ -1,14 +1,15 @@
 terraform {
   required_providers {
     github = {
-      source  = "hashicorp/github"
+      source  = "hashicorp/github"  
+      organization = "pandom"
     }
   }
 }
 
 provider "github" {
-  organization = "pandom"
   token      = var.github_token
+  individual = true
 }
 
 # provider "github" {
