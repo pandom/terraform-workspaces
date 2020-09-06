@@ -1,6 +1,6 @@
 provider "github" {
   alias = "personal"
-  individual = false
+  individual = true
   organization = "pandom"
   // source = "hashicorp/github"
   // version    = "2.4.0"
