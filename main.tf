@@ -1,7 +1,8 @@
 terraform {
   required_providers {
     github = {
-      source  = "hashicorp/github"  
+      source  = "hashicorp/github"
+      individual = true  
     }
   }
 }
