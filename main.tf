@@ -1,14 +1,17 @@
-terraform {
-  required_providers {
-    github = {
-      source  = "hashicorp/github"
-      individual = true
-      alias = "personal"  
-    }
-  }
-}
+// terraform {
+//   required_providers {
+//     github = {
+//       source  = "hashicorp/github"
+//       individual = true
+//       alias = "personal"  
+//     }
+//   }
+// }
 
 provider "github" {
+  individual = false
+  organization = "pandom"
+  version    = "2.4.0"
   alias = personal
 }
 
