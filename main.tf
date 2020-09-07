@@ -14,10 +14,12 @@ provider "github" {
   version    = "2.4.0"
 }
 
+
+
 module "terraform-vault-fmg" {
   
   source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.16"
+  //version = "0.0.16"
 
   repository_name = "terraform-vault-fmg"
   oauth_token_id = var.oauth_token_id
@@ -28,7 +30,7 @@ module "terraform-vault-fmg" {
 
 module "tf-azure-vault-prod" {
   source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.16"
+  //version = "0.0.16"
 
   repository_name = "tf-azure-vault"
   oauth_token_id = var.oauth_token_id
@@ -38,7 +40,7 @@ module "tf-azure-vault-prod" {
 
 module "tf-azure-vault-dev" {
   source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.16"
+  //version = "0.0.16"
 
   repository_name = "tf-azure-vault-dev"
   oauth_token_id = var.oauth_token_id
@@ -48,7 +50,7 @@ module "tf-azure-vault-dev" {
 
 module "tf-aws-vault-dev" {
   source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.16"
+  //version = "0.0.16"
 
   repository_name = "tf-aws-vault"
   oauth_token_id = var.oauth_token_id
@@ -58,7 +60,7 @@ module "tf-aws-vault-dev" {
 
 module "tf-nomad-jobs" {
   source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.16"
+  //version = "0.0.16"
 
   repository_name = "tf-nomad-jobs"
   oauth_token_id = var.oauth_token_id
