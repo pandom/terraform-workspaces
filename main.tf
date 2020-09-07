@@ -9,7 +9,6 @@ terraform {
 provider "github" {
   token      = var.github_token
   individual = true
-  organization = "pandom"
 }
 
 # provider "github" {
