@@ -12,18 +12,13 @@ provider "github" {
   individual = false
   organization = "pandom"
   version    = "2.4.0"
-  alias = personal
 }
 
 module "terraform-vault-fmg" {
   
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.16"
-  providers = {
-    github = github.personal
-    token   = var.github_token
-    individual = true
-  }
+
   repository_name = "terraform-vault-fmg"
   oauth_token_id = var.oauth_token_id
   env_var = var.azure_env_var
@@ -34,11 +29,7 @@ module "terraform-vault-fmg" {
 module "tf-azure-vault-prod" {
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.16"
-  providers = {
-    github = github.personal
-    token   = var.github_token
-    individual = true
-  }
+
   repository_name = "tf-azure-vault"
   oauth_token_id = var.oauth_token_id
   env_var = var.azure_env_var
@@ -48,11 +39,7 @@ module "tf-azure-vault-prod" {
 module "tf-azure-vault-dev" {
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.16"
-  providers = {
-    github = github.personal
-    token   = var.github_token
-    individual = true
-  }
+
   repository_name = "tf-azure-vault-dev"
   oauth_token_id = var.oauth_token_id
   env_var = var.azure_env_var
@@ -62,11 +49,7 @@ module "tf-azure-vault-dev" {
 module "tf-aws-vault-dev" {
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.16"
-  providers = {
-    github = github.personal
-    token   = var.github_token
-    individual = true
-  }
+
   repository_name = "tf-aws-vault"
   oauth_token_id = var.oauth_token_id
   env_var = var.azure_env_var
@@ -76,11 +59,7 @@ module "tf-aws-vault-dev" {
 module "tf-nomad-jobs" {
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.16"
-  providers = {
-    github = github.personal
-    token   = var.github_token
-    individual = true
-  }
+
   repository_name = "tf-nomad-jobs"
   oauth_token_id = var.oauth_token_id
   // env_var = merge(var.azure_env_var, var.terraform_agent_var, var.nomad_env_var)
