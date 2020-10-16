@@ -100,11 +100,6 @@ variable azure_env_var {
   }
 }
 
-variable azure_location_var {
-  type = map
-  default = {}
-}
-
 variable slack_webhook {
   type = map
   default = {}
