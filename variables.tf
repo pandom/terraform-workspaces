@@ -29,7 +29,7 @@ variable repository_private {
 
 variable template_repository_owner {
   type = string
-  default = "grantorchard"
+  default = "pandom"
 }
 
 variable template_repository_name {
@@ -41,6 +41,28 @@ variable aws_env_var {
   default = {
     "AWS_REGION" = {
       "value" = "ap-southeast-2",
+      "sensitive" = false
+    }
+  }
+}
+
+variable vsphere_env_var {
+  type = map
+  default = {
+    "VSPHERE_USER" = {
+      "value" = "",
+      "sensitive" = false
+    },
+    "VSPHERE_PASSWORD" = {
+      "value" = "",
+      "sensitive" = true
+    },
+    "VSPHERE_SERVER" = {
+      "value" = "",
+      "sensitive" = false
+    },
+    "VSPHERE_ALLOW_UNVERIFIED_SSL" = {
+      "value" = true,
       "sensitive" = false
     }
   }

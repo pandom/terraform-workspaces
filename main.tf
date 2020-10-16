@@ -38,7 +38,7 @@ module "terraform-vault-fmg" {
 }
 
 module "tf-aws-boundary" {
-  source = "app.terraform.io/grantorchard/workspace/tfe"
+  source = "app.terraform.io/burkey/workspace/tfe"
   providers = {
     github = github.personal
   }
