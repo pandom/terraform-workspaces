@@ -90,7 +90,7 @@ variable azure_env_var {
   }
 }
 
-varaible azure_location_var {
+variable azure_location_var {
   type = string
   default = ""
 }
