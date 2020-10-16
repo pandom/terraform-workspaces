@@ -17,7 +17,6 @@ module "terraform-vault-fmg" {
   }
   repository_name = "terraform-vault-fmg"
   oauth_token_id = var.oauth_token_id
-  env_var = var.azure_env_var
   tf_var = var.azure_location_var
 }
 
