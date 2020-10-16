@@ -46,6 +46,16 @@ variable aws_env_var {
   }
 }
 
+variable azure_location_var {
+  type = map
+  default = {
+  "AZURE_LOCATION_VAR" = {
+    "value" = "australiasoutheast",
+    "sensitive" = false
+    }
+  }
+}
+
 variable vsphere_env_var {
   type = map
   default = {
