@@ -1,7 +1,7 @@
 provider "github" {
   alias = "personal"
-  individual = false
-  organization = "pandom"
+  individual = true
+  owner = "pandom"
   version    = "2.4.0"
 }
 
