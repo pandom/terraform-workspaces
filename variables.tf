@@ -74,15 +74,15 @@ variable azure_env_var {
     "ARM_CLIENT_ID" = {
       "value" = "",
       "sensitive" = true
-    }
+    },
     "ARM_CLIENT_SECRET" = {
       "value" = "",
       "sensitive" = true
-    }
+    },
     "ARM_SUBSCRIPTION_ID" = {
       "value" = "",
       "sensitive" = true
-    }
+    },
     "ARM_TENANT_ID" = {
       "value" = "",
       "sensitive" = true
