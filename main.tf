@@ -1,6 +1,6 @@
 provider "github" {
   alias = "personal"
-  individual = true
+  // individual = true
   owner = "pandom"
   version    = "3.1.0"
 }
