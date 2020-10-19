@@ -21,7 +21,7 @@ locals {
 
 module "tf-aws-boundary" {
   source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.16"
+  version = "0.0.18"
   providers = {
     github = github.personal
   }
