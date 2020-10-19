@@ -20,7 +20,7 @@ locals {
 }
 
 module "tf-aws-boundary" {
-  source = "app.terraform.io/grantochard/workspace/tfe"
+  source = "app.terraform.io/grantorchard/workspace/tfe"
   version = "0.0.18"
   providers = {
     github = github.personal
