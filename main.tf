@@ -38,7 +38,6 @@ module "tf-aws-boundary" {
 //   var.slack_webhook)
 // }
   tf_var = var.ssh_public_key
-  tf_var = var.slack_webhook
 }
 // module "terraform-vault-fmg" {
   
