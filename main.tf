@@ -29,13 +29,14 @@ module "tf-aws-boundary" {
   create_repo = true
   repository_private = false
   oauth_token_id = var.oauth_token_id
-  tf_var = merge({
+  tf_var = {
     "ssh_public_key" = {
       "value" = local.ssh_public_key,
       "sensitive" = false
     }
-  })
+  }
 }
+// merge was used to add a default set of variables at request time
 
 // module "terraform-vault-fmg" {
   
