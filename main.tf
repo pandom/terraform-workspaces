@@ -20,7 +20,7 @@ locals {
 }
 
 module "tf-aws-boundary" {
-  source = "app.terraform.io/grantorchard/workspace/tfe"
+  source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.18"
   providers = {
     github = github.personal
@@ -29,15 +29,17 @@ module "tf-aws-boundary" {
   create_repo = true
   repository_private = false
   oauth_token_id = var.oauth_token_id
-  tf_var = merge({
-    "ssh_public_key" = {
-      "value" = local.ssh_public_key,
-      "sensitive" = false
-    }
-  },
-  var.slack_webhook)
+//   tf_var = merge({
+//     "ssh_public_key" = {
+//       "value" = local.ssh_public_key,
+//       "sensitive" = false
+//     }
+//   },
+//   var.slack_webhook)
+// }
+  tf_var = var.ssh_public_key
+  tf_var = var.slack_webhook
 }
-
 // module "terraform-vault-fmg" {
   
 //   source = "app.terraform.io/burkey/workspace/tfe"
