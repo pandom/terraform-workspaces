@@ -1,3 +1,13 @@
+// terraform {
+//   backend "remote" {
+//     hostname = "app.terraform.io"
+//     organization = "burkey"
+
+//     workspaces {
+//       name = "terraform-workspaces"
+//     }
+//   }
+// }
 provider "github" {
   alias = "personal"
   // individual = true

@@ -23,3 +23,14 @@
 .terraform/plugins/selections.json
 .terraform/plugins/registry.terraform.io/hashicorp/github/2.4.0/darwin_amd64/terraform-provider-github_v2.4.0_x4
 .terraform/plugins/registry.terraform.io/hashicorp/tfe/0.21.0/darwin_amd64/terraform-provider-tfe_v0.21.0_x4
+.terraform/terraform.tfstate
+.terraform/modules/tf-aws-boundary/.gitignore
+.terraform/modules/tf-aws-boundary/main.tf
+.terraform/modules/tf-aws-boundary/outputs.tf
+.terraform/modules/tf-aws-boundary/README.md
+.terraform/modules/tf-aws-boundary/variables.tf
+.terraform/modules/tf-aws-boundary/templates/variables.tf
+.terraform/plugins/registry.terraform.io/-/github/3.1.0/darwin_amd64/terraform-provider-github_v3.1.0_x4
+.terraform/plugins/registry.terraform.io/-/tfe/0.22.0/darwin_amd64/terraform-provider-tfe_v0.22.0_x4
+.terraform/plugins/registry.terraform.io/hashicorp/github/3.1.0/darwin_amd64/terraform-provider-github_v3.1.0_x4
+.terraform/plugins/registry.terraform.io/hashicorp/tfe/0.22.0/darwin_amd64/terraform-provider-tfe_v0.22.0_x4
