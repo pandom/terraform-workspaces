@@ -3,6 +3,7 @@ module "tf-packer-consul" {
   providers = {
     github = github.personal
   }
+  template_repository_owner = "pandom"
   repository_name = "tf-packer-consul"
   oauth_token_id = var.oauth_token_id
 }
@@ -11,6 +12,7 @@ module "tf-packer-nomad" {
   providers = {
     github = github.personal
   }
+  template_repository_owner = "pandom"
   repository_name = "tf-packer-nomad"
   oauth_token_id = var.oauth_token_id
 }
@@ -19,6 +21,7 @@ module "tf-packer-vault" {
   providers = {
     github = github.personal
   }
+  template_repository_owner = "pandom"
   repository_name = "tf-packer-vault"
   oauth_token_id = var.oauth_token_id
 }
@@ -27,6 +30,7 @@ module "tf-packer-waypoint" {
   providers = {
     github = github.personal
   }
+  template_repository_owner = "pandom"
   repository_name = "tf-packer-waypoint"
   oauth_token_id = var.oauth_token_id
 }
@@ -35,6 +39,7 @@ module "tf-packer-boundary" {
   providers = {
     github = github.personal
   }
+  template_repository_owner = "pandom"
   repository_name = "tf-packer-boundary"
   oauth_token_id = var.oauth_token_id
 }
