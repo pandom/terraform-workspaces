@@ -76,25 +76,6 @@ module "tf-aws-consul" {
   var.slack_webhook)
 }
 
-module "tf-aws-consul" {
-  source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.19"
-  providers = {
-    github = github.personal
-  }
-  repository_name = "tf-aws-consul"
-  create_repo = true
-  repository_private = false
-  oauth_token_id = var.oauth_token_id
-  tf_var = merge({
-    "ssh_public_key" = {
-      "value" = local.ssh_public_key,
-      "sensitive" = false
-    }
-  },
-  var.slack_webhook)
-}
-
 // module "terraform-vault-fmg" {
   
 //   source = "app.terraform.io/burkey/workspace/tfe"
