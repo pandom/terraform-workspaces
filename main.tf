@@ -76,6 +76,97 @@ module "tf-aws-consul" {
   var.slack_webhook)
 }
 
+
+
+### PACKER REPOS
+
+module "tf-packer-consul" {
+  source = "app.terraform.io/burkey/workspace/tfe"
+  version = "0.0.19"
+  providers = {
+    github = github.personal
+  }
+  template_repository_owner = "pandom"
+  repository_name = "tf-packer-consul"
+  create_repo = true
+  repository_private = false
+  oauth_token_id = var.oauth_token_id
+  tf_var = merge({
+    "ssh_public_key" = {
+      "value" = local.ssh_public_key,
+      "sensitive" = false
+    }
+  },
+  var.slack_webhook)
+}
+module "tf-packer-nomad" {
+  source = "app.terraform.io/burkey/workspace/tfe"
+  version = "0.0.19"
+  providers = {
+    github = github.personal
+  }
+  template_repository_owner = "pandom"
+  repository_name = "tf-packer-nomad"
+  create_repo = true
+  repository_private = false
+  oauth_token_id = var.oauth_token_id
+  tf_var = merge({
+    "ssh_public_key" = {
+      "value" = local.ssh_public_key,
+      "sensitive" = false
+    }
+  },
+  var.slack_webhook)
+}
+module "tf-packer-vault" {
+  source = "app.terraform.io/burkey/workspace/tfe"
+  version = "0.0.19"
+  providers = {
+    github = github.personal
+  }
+  template_repository_owner = "pandom"
+  repository_name = "tf-packer-vault"
+  oauth_token_id = var.oauth_token_id
+}
+module "tf-packer-waypoint" {
+  source = "app.terraform.io/burkey/workspace/tfe"
+  version = "0.0.19"
+  providers = {
+    github = github.personal
+  }
+  template_repository_owner = "pandom"
+  repository_name = "tf-packer-waypoint"
+  create_repo = true
+  repository_private = false
+  oauth_token_id = var.oauth_token_id
+  tf_var = merge({
+    "ssh_public_key" = {
+      "value" = local.ssh_public_key,
+      "sensitive" = false
+    }
+  },
+  var.slack_webhook)
+}
+module "tf-packer-boundary" {
+  source = "app.terraform.io/burkey/workspace/tfe"
+  version = "0.0.19"
+  providers = {
+    github = github.personal
+  }
+  template_repository_owner = "pandom"
+  repository_name = "tf-packer-boundary"
+  create_repo = true
+  repository_private = false
+  oauth_token_id = var.oauth_token_id
+  tf_var = merge({
+    "ssh_public_key" = {
+      "value" = local.ssh_public_key,
+      "sensitive" = false
+    }
+  },
+  var.slack_webhook)
+}
+
 // module "terraform-vault-fmg" {
   
 //   source = "app.terraform.io/burkey/workspace/tfe"
