@@ -21,7 +21,7 @@ locals {
 ## New Prefix since revamp is tf-
 module "tf-aws-boundary" {
   source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.19"
+  version = "0.0.20"
   providers = {
     github = github.personal
   }
@@ -40,7 +40,7 @@ module "tf-aws-boundary" {
 
 module "tf-aws-nomad" {
   source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.19"
+  version = "0.0.20"
   providers = {
     github = github.personal
   }
@@ -59,7 +59,7 @@ module "tf-aws-nomad" {
 
 module "tf-aws-consul" {
   source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.19"
+  version = "0.0.20"
   providers = {
     github = github.personal
   }
@@ -82,7 +82,7 @@ module "tf-aws-consul" {
 
 module "tf-packer-consul" {
   source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.19"
+  version = "0.0.20"
   providers = {
     github = github.personal
   }
@@ -101,7 +101,7 @@ module "tf-packer-consul" {
 }
 module "tf-packer-nomad" {
   source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.19"
+  version = "0.0.20"
   providers = {
     github = github.personal
   }
@@ -120,7 +120,7 @@ module "tf-packer-nomad" {
 }
 module "tf-packer-vault" {
   source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.19"
+  version = "0.0.20"
   providers = {
     github = github.personal
   }
@@ -130,7 +130,7 @@ module "tf-packer-vault" {
 }
 module "tf-packer-waypoint" {
   source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.19"
+  version = "0.0.20"
   providers = {
     github = github.personal
   }
@@ -149,7 +149,7 @@ module "tf-packer-waypoint" {
 }
 module "tf-packer-boundary" {
   source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.19"
+  version = "0.0.20"
   providers = {
     github = github.personal
   }
