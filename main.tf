@@ -59,26 +59,6 @@ module "tf-vault-ns-ops" {
   var.slack_webhook)
 }
 
-
-module "tf-vault-ns-ops" {
-  source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.20" 
-  providers = {
-    github = github.personal
-  }
-  repository_name = "tf-vault-ns-ops"
-  create_repo = true
-  repository_private = false
-  oauth_token_id = var.oauth_token_id
-  tf_var = merge({
-    "ssh_public_key" = {
-      "value" = local.ssh_public_key,
-      "sensitive" = false
-    }
-  },
-  var.slack_webhook)
-}
-
 module "tf-vault-ns" {
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.20"
