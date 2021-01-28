@@ -7,7 +7,7 @@ variable vault_addr {
   type = map
   default = {
     "VAULT_ADDR" = {
-      "value" = "https://vault-cluster.vault.11eb5471-19a8-952e-885d-0242ac110009.aws.hashicorp.cloud:8200"",
+      "value" = "https://vault-cluster.vault.11eb5471-19a8-952e-885d-0242ac110009.aws.hashicorp.cloud:8200",
       "sensitive" = false
     }
     
