@@ -4,8 +4,13 @@ variable tfe_workspace_name {
 }
 
 variable vault_addr {
-  type = string
-  default = "https://vault-cluster.vault.11eb5471-19a8-952e-885d-0242ac110009.aws.hashicorp.cloud:8200"
+  type = map
+  default = {
+    "VAULT_ADDR" = {
+      "value" = "https://vault-cluster.vault.11eb5471-19a8-952e-885d-0242ac110009.aws.hashicorp.cloud:8200"",
+      "sensitive" = false
+    }
+    
 }
 
 variable ssh_public_key {
