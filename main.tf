@@ -36,8 +36,7 @@ module "tf-vault-nomad" {
       "sensitive" = false
     }
   },
-  var.slack_webhook,
-  var.vault_addr)
+  var.slack_webhook)
 }
 
 module "tf-vault-ns-ops" {
