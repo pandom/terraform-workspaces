@@ -58,6 +58,24 @@ module "tf-agent-snapshot" {
   var.slack_webhook)
 }
 
+module "tf-gcp-nomad" {
+  source = "app.terraform.io/burkey/workspace/tfe"
+  version = "0.0.20" 
+  providers = {
+    github = github.personal
+  }
+  repository_name = "tf-gcp-nomad"
+  create_repo = true
+  repository_private = false
+  oauth_token_id = var.oauth_token_id
+  tf_var = merge({
+    "ssh_public_key" = {
+      "value" = local.ssh_public_key,
+      "sensitive" = false
+    }
+  },
+  var.slack_webhook)
+}
 module "tf-vault-nomad" {
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.20" 
