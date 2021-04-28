@@ -23,7 +23,7 @@ module "tf-vsphere-module" {
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.20"
   providers = {
-    github = github.person 
+    github = github.personal 
    }
     repository_name = "tf-vsphere-module"
   create_repo = true
