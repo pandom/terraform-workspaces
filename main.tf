@@ -33,6 +33,14 @@ module "tf-vsphere-module" {
     "ssh_public_key" = {
       "value" = local.ssh_public_key,
       "sensitive" = false
+    },
+    "user" = {
+      "value" = "administrator@vsphere.local",
+      "sensitive" = false
+    },
+    "password" = {
+      "value" = "VMware123!",
+      "sensitive" = true
     }
   },
   var.slack_webhook)
