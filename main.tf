@@ -101,6 +101,25 @@ module "tf-gcp-nomad" {
   },
   var.slack_webhook)
 }
+
+module "tf-4d-demo" {
+  source = "app.terraform.io/burkey/workspace/tfe"
+  version = "0.0.20" 
+  providers = {
+    github = github.personal
+  }
+  repository_name = "tf-4d-demo"
+  create_repo = true
+  repository_private = false
+  oauth_token_id = var.oauth_token_id
+  tf_var = merge({
+    "ssh_public_key" = {
+      "value" = local.ssh_public_key,
+      "sensitive" = false
+    }
+  },
+  var.slack_webhook)
+}
 module "tf-vault-nomad" {
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.20" 
@@ -131,6 +150,7 @@ module "tf-vault-ns-ops" {
   repository_name = "tf-vault-ns-ops"
   create_repo = true
   repository_private = false
+  tf_ver = "0.15.2"
   oauth_token_id = var.oauth_token_id
   tf_var = merge({
     "ssh_public_key" = {
@@ -178,7 +198,7 @@ module "tf-gcp-factory" {
   },
   var.slack_webhook)
 }
-## New Prefix since revamp is tf-
+
 module "tf-aws-boundary" {
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.20"
