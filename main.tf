@@ -102,24 +102,6 @@ module "tf-gcp-nomad" {
   var.slack_webhook)
 }
 
-module "tf-4d-demo" {
-  source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.20" 
-  providers = {
-    github = github.personal
-  }
-  repository_name = "tf-4d-demo"
-  create_repo = true
-  repository_private = false
-  oauth_token_id = var.oauth_token_id
-  tf_var = merge({
-    "ssh_public_key" = {
-      "value" = local.ssh_public_key,
-      "sensitive" = false
-    }
-  },
-  var.slack_webhook)
-}
 module "tf-vault-nomad" {
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.20" 
@@ -138,8 +120,6 @@ module "tf-vault-nomad" {
   },
   var.slack_webhook)
 }
-
-
 
 module "tf-vault-ns-ops" {
   source = "app.terraform.io/burkey/workspace/tfe"
@@ -347,70 +327,6 @@ module "tf-packer-boundary" {
   var.slack_webhook)
 }
 
-// module "terraform-vault-fmg" {
-  
-//   source = "app.terraform.io/burkey/workspace/tfe"
-//   providers = {
-//     github = github.personal
-//   }
-//   repository_name = "terraform-vault-fmg"
-//   oauth_token_id = var.oauth_token_id
-//   tf_var = var.azure_location_var
-// }
-
-// module "tf-azure-vault-prod" {
-//   source = "app.terraform.io/burkey/workspace/tfe"
-//     providers = {
-//     github = github.personal
-//   }
-
-//   repository_name = "tf-azure-vault"
-//   oauth_token_id = var.oauth_token_id
-//   env_var = var.azure_env_var
-//   tf_var = var.azure_location_var
-//   repository_description = "TEST"
-// }
-
-// module "tf-azure-vault-dev" {
-//   source = "app.terraform.io/burkey/workspace/tfe"
-//     providers = {
-//     github = github.personal
-//   }
-
-//   repository_name = "tf-azure-vault-dev"
-//   oauth_token_id = var.oauth_token_id
-//   env_var = var.azure_env_var
-//   tf_var = var.azure_location_var
-// }
-
-// module "tf-aws-vault-dev" {
-//   source = "app.terraform.io/burkey/workspace/tfe"
-//     providers = {
-//     github = github.personal
-//   }
-
-//   repository_name = "tf-aws-vault"
-//   oauth_token_id = var.oauth_token_id
-//   env_var = var.azure_env_var
-//     tf_var = merge({
-//     "ssh_public_key" = {
-//       "value" = local.ssh_public_key,
-//       "sensitive" = false
-//       }
-//     },
-//     var.azure_location_var)
-// }
-
-// module "tf-nomad-jobs" {
-//   source = "app.terraform.io/burkey/workspace/tfe"
-//     providers = {
-//     github = github.personal
-//   }
-
-//   repository_name = "tf-nomad-jobs"
-//   oauth_token_id = var.oauth_token_id
-//   // env_var = merge(var.azure_env_var, var.terraform_agent_var, var.nomad_env_var)
-// }
 
 
 
