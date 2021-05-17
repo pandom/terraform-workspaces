@@ -154,7 +154,6 @@ module "tf-vault-ns-ops" {
   repository_name = "tf-vault-ns-ops"
   create_repo = true
   repository_private = false
-  tf_ver = "0.15.2"
   oauth_token_id = var.oauth_token_id
   tf_var = merge({
     "ssh_public_key" = {
