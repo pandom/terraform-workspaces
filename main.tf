@@ -40,7 +40,7 @@ module "tf-vault-terraform-token" {
   var.slack_webhook)
 }
 
-## Cody's Lab - Needs VPN from macbook
+## Cody's Lab - Needs VPN from macbook - Need to add agent
 module "tf-vsphere-module" {
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.20"
