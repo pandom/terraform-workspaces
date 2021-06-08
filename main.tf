@@ -38,6 +38,26 @@ module "tf-devstack" {
   },
   var.slack_webhook)
 }
+
+module "tf-devstack-tenant" {
+  source = "app.terraform.io/burkey/workspace/tfe"
+  version = "0.0.20" 
+  providers = {
+    github = github.personal
+  }
+  repository_name = "tf-devstack-tenant"
+  create_repo = true
+  repository_private = false
+  oauth_token_id = var.oauth_token_id
+  tf_var = merge({
+    "ssh_public_key" = {
+      "value" = local.ssh_public_key,
+      "sensitive" = false
+    }
+  },
+  var.slack_webhook)
+}
+
 module "tf-vault-terraform-token" {
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.20" 
