@@ -26,7 +26,7 @@ locals {
 
 module "tf-devstack" {
   source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.23" 
+  version = "0.0.24" 
   providers = {
     github = github.personal
   }
@@ -47,7 +47,7 @@ module "tf-devstack" {
 
 module "tf-devstack-tenant" {
   source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.23" 
+  version = "0.0.24" 
   providers = {
     github = github.personal
   }
