@@ -54,6 +54,8 @@ module "tf-devstack-tenant" {
   repository_name = "tf-devstack-tenant"
   create_repo = true
   repository_private = false
+  execution_mode = "agent"
+  agent_pool_id = data.tfe_agent_pool.laptop_agent_pool.id
   oauth_token_id = var.oauth_token_id
   tf_var = merge({
     "ssh_public_key" = {
