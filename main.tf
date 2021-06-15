@@ -24,47 +24,47 @@ locals {
 }
 ## Terraform Token Lab
 
-module "tf-devstack" {
-  source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.24" 
-  providers = {
-    github = github.personal
-  }
-  repository_name = "tf-devstack"
-  create_repo = true
-  repository_private = false
-  oauth_token_id = var.oauth_token_id
-  execution_mode = "agent"
-  agent_pool_id = data.tfe_agent_pool.laptop_agent_pool.id
-  tf_var = merge({
-    "ssh_public_key" = {
-      "value" = local.ssh_public_key,
-      "sensitive" = false
-    }
-  },
-  var.slack_webhook)
-}
+# module "tf-devstack" {
+#   source = "app.terraform.io/burkey/workspace/tfe"
+#   version = "0.0.24" 
+#   providers = {
+#     github = github.personal
+#   }
+#   repository_name = "tf-devstack"
+#   create_repo = true
+#   repository_private = false
+#   oauth_token_id = var.oauth_token_id
+#   execution_mode = "agent"
+#   agent_pool_id = data.tfe_agent_pool.laptop_agent_pool.id
+#   tf_var = merge({
+#     "ssh_public_key" = {
+#       "value" = local.ssh_public_key,
+#       "sensitive" = false
+#     }
+#   },
+#   var.slack_webhook)
+# }
 
-module "tf-devstack-tenant" {
-  source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.24" 
-  providers = {
-    github = github.personal
-  }
-  repository_name = "tf-devstack-tenant"
-  create_repo = true
-  repository_private = false
-  execution_mode = "agent"
-  agent_pool_id = data.tfe_agent_pool.laptop_agent_pool.id
-  oauth_token_id = var.oauth_token_id
-  tf_var = merge({
-    "ssh_public_key" = {
-      "value" = local.ssh_public_key,
-      "sensitive" = false
-    }
-  },
-  var.slack_webhook)
-}
+# module "tf-devstack-tenant" {
+#   source = "app.terraform.io/burkey/workspace/tfe"
+#   version = "0.0.24" 
+#   providers = {
+#     github = github.personal
+#   }
+#   repository_name = "tf-devstack-tenant"
+#   create_repo = true
+#   repository_private = false
+#   execution_mode = "agent"
+#   agent_pool_id = data.tfe_agent_pool.laptop_agent_pool.id
+#   oauth_token_id = var.oauth_token_id
+#   tf_var = merge({
+#     "ssh_public_key" = {
+#       "value" = local.ssh_public_key,
+#       "sensitive" = false
+#     }
+#   },
+#   var.slack_webhook)
+# }
 
 module "tf-vault-terraform-token" {
   source = "app.terraform.io/burkey/workspace/tfe"
