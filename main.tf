@@ -79,7 +79,25 @@ module "tf-vault-terraform-token" {
   tf_var = merge({
     "ssh_public_key" = {
       "value" = local.ssh_public_key,
-      "sensitive" = false
+      "sensitive" = true
+    }
+  },
+  var.slack_webhook)
+}
+module "tf-burkey-test" {
+  source = "app.terraform.io/burkey/workspace/tfe"
+  version = "0.0.20" 
+  providers = {
+    github = github.personal
+  }
+  repository_name = "tf-burkey-test"
+  create_repo = true
+  repository_private = false
+  oauth_token_id = var.oauth_token_id
+  tf_var = merge({
+    "ssh_public_key" = {
+      "value" = local.ssh_public_key,
+      "sensitive" = true
     }
   },
   var.slack_webhook)
