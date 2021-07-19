@@ -45,6 +45,29 @@ module "tf-devstack" {
   var.slack_webhook)
 }
 
+
+module "tf-nomad-ipad" {
+  source = "app.terraform.io/burkey/workspace/tfe"
+  version = "0.0.24" 
+  providers = {
+    github = github.personal
+  }
+  repository_name = "tf-nomad-ipad"
+  create_repo = true
+  repository_private = false
+  oauth_token_id = var.oauth_token_id
+  execution_mode = "agent"
+  agent_pool_id = data.tfe_agent_pool.laptop_agent_pool.id
+  tf_var = merge({
+    "ssh_public_key" = {
+      "value" = local.ssh_public_key,
+      "sensitive" = false
+    }
+  },
+  var.slack_webhook)
+}
+
+
 module "tf-devstack-tenant" {
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.24" 
@@ -151,7 +174,13 @@ module "tf-hcp-config" {
   var.slack_webhook)
 }
 
+
+module "tshirt-m" {
+
+}
+
 module "tf-agent-snapshot" {
+  count = 3
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.20" 
   providers = {
