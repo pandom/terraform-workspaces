@@ -46,13 +46,13 @@ module "tf-devstack" {
 }
 
 
-module "tf-nomad-ipad" {
+module "tf-nomad-ipam" {
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.24" 
   providers = {
     github = github.personal
   }
-  repository_name = "tf-nomad-ipad"
+  repository_name = "tf-nomad-ipam"
   create_repo = true
   repository_private = false
   oauth_token_id = var.oauth_token_id
@@ -174,13 +174,7 @@ module "tf-hcp-config" {
   var.slack_webhook)
 }
 
-
-module "tshirt-m" {
-
-}
-
 module "tf-agent-snapshot" {
-  count = 3
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.20" 
   providers = {
