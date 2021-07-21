@@ -3,6 +3,16 @@ variable tfe_workspace_name {
   default = ""
 }
 
+variable "nomad_addr" {
+  type = map
+  default = {    
+    "NOMAD_ADDR" = {
+      "value" = "http://35.244.92.16:4646",
+      "sensitive" = false
+    }
+  }
+}
+
 variable ssh_public_key {
   type = string
   default = ""
