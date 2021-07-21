@@ -174,6 +174,25 @@ module "tf-hcp-config" {
   var.slack_webhook)
 }
 
+module "tf-nomad-jobs" {
+  source = "app.terraform.io/burkey/workspace/tfe"
+  version = "0.0.20" 
+  providers = {
+    github = github.personal
+  }
+  repository_name = "tf-nomad-job"
+  create_repo = true
+  repository_private = false
+  oauth_token_id = var.oauth_token_id
+  tf_var = merge({
+    "ssh_public_key" = {
+      "value" = local.ssh_public_key,
+      "sensitive" = false
+    }
+  },
+  var.slack_webhook,
+  var.nomad_addr)
+}
 module "tf-agent-snapshot" {
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.20" 
