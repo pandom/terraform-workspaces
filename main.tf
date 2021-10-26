@@ -34,6 +34,7 @@ module "tf-discord" {
   repository_private = false
   oauth_token_id = var.oauth_token_id
   execution_mode = "remote"
+  agent_pool_id = data.tfe_agent_pool.laptop_agent_pool.id
   tf_var = merge({
     "ssh_public_key" = {
       "value" = local.ssh_public_key,
