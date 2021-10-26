@@ -33,6 +33,7 @@ module "tf-discord" {
   create_repo = true
   repository_private = false
   oauth_token_id = var.oauth_token_id
+  execution_mode = "remote"
   tf_var = merge({
     "ssh_public_key" = {
       "value" = local.ssh_public_key,
