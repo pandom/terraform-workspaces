@@ -24,7 +24,7 @@ locals {
 }
 ## Terraform Token Lab
 module "tf-discord" {
-  source = "aap.terraform.io/burkey/workspace/tfe"
+  source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.24"
   providers = {
     github = github.personal 
