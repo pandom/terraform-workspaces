@@ -8,19 +8,11 @@
 //     }
 //   }
 // }
-
-terraform {
-  required_providers {
-    github = {
-      source = "integrations/github"
-      version = "~> 4.0"
-    }
-  }
-}
-
 provider "github" {
+  alias = "personal"
   // individual = true
   owner = "pandom"
+  version    = "3.1.0"
 }
 
 data "tfe_agent_pool" "laptop_agent_pool" {
@@ -37,9 +29,9 @@ locals {
 module "tf-hcp-cluster" {
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.20" 
-  # providers = {
-  #   github = github.personal
-  # }
+  providers = {
+    github = github.personal
+  }
   repository_name = "tf-hcp-cluster"
   create_repo = true
   repository_private = false
@@ -56,9 +48,9 @@ module "tf-hcp-cluster" {
 module "tf-aws-vms" {
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.20" 
-  # providers = {
-  #   github = github.personal
-  # }
+  providers = {
+    github = github.personal
+  }
   repository_name = "tf-aws-vms"
   create_repo = true
   repository_private = false
@@ -74,9 +66,9 @@ module "tf-aws-vms" {
 module "tf-gcp-nomad" {
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.20" 
-  # providers = {
-  #   github = github.personal
-  # }
+  providers = {
+    github = github.personal
+  }
   repository_name = "tf-gcp-nomad"
   create_repo = true
   repository_private = false
