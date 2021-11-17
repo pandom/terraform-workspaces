@@ -60,8 +60,7 @@ module "tf-aws-vms" {
       "value" = local.ssh_public_key,
       "sensitive" = false
     }
-  },
-  var.slack_webhook)
+  })
 }
 
 module "tf-gcp-nomad" {
