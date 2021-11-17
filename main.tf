@@ -45,13 +45,13 @@ module "tf-hcp-cluster" {
   var.slack_webhook)
 }
 
-module "tf-gcp-nomad" {
+module "tf-aws-vms" {
   source = "app.terraform.io/burkey/workspace/tfe"
   version = "0.0.20" 
   providers = {
     github = github.personal
   }
-  repository_name = "tf-gcp-nomad"
+  repository_name = "tf-aws-vms"
   create_repo = true
   repository_private = false
   oauth_token_id = var.oauth_token_id
@@ -62,6 +62,18 @@ module "tf-gcp-nomad" {
     }
   },
   var.slack_webhook)
+}
+
+module "tf-gcp-nomad" {
+  source = "app.terraform.io/burkey/workspace/tfe"
+  version = "0.0.20" 
+  providers = {
+    github = github.personal
+  }
+  repository_name = "tf-gcp-nomad"
+  create_repo = true
+  repository_private = false
+  oauth_token_id = var.oauth_token_id
 }
 
 
