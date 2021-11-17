@@ -8,11 +8,20 @@
 //     }
 //   }
 // }
+
+terraform {
+  required_providers {
+    github = {
+      source = "integrations/github"
+      version = "~> 4.0"
+    }
+  }
+}
+
 provider "github" {
   alias = "personal"
   // individual = true
   owner = "pandom"
-  version    = "3.1.0"
 }
 
 data "tfe_agent_pool" "laptop_agent_pool" {
