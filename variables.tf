@@ -119,3 +119,41 @@ variable slack_webhook {
   type = map
   default = {}
 }
+
+variable "td1_workspace_names" {
+  type = list(string)
+  default = ["td1-devops-prod","td1-devops-sit","td1-devops-dev"]
+}
+
+variable "td2_workspace_names" {
+  type = list(string)
+  default = ["td2-platform-prod","td2-platform-sit","td2-platform-dev"]
+}
+
+variable "td3_workspace_names" {
+  type = list(string)
+  default = ["td3-special-prod","td2-special-sit","td2-special-dev"]
+}
+
+variable "td1_admin_name" {
+  type = string
+  default = "td1-devops-admin"
+}
+variable "td1_ops_name" {
+  type = string
+  default = "td1-devops-ops"
+}
+
+variable "td2_admin_name" {
+  type = string
+  default = "td2-platform-admin"
+}
+variable "td2_ops_name" {
+  type = string
+  default = "td2-platform-ops"
+}
+
+variable "td3_ops_name" {
+  type = string
+  default = "td3-special-ops"
+}
