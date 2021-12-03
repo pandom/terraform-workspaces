@@ -29,6 +29,21 @@ resource "tfe_team" "td1admin" {
   organization = var.tfe_org_name
 }
 
+resource "tfe_team" "td1ops" {
+  name = var.td1_ops_name
+  organization = var.tfe_org_name
+}
+
+resource "tfe_team" "td2admin" {
+  name = var.td2_admin_name
+  organization = var.tfe_org_name
+}
+
+resource "tfe_team" "td2ops" {
+  name = var.td2_ops_name
+  organization = var.tfe_org_name
+}
+
 resource "tfe_team_access" "td1admin" {
  for_each = { for v in tfe_workspace.td1: v.name => v }
   team_id = tfe_team.td1admin.id
