@@ -122,7 +122,7 @@ variable slack_webhook {
 
 variable "td1_workspace_names" {
   type = list(string)
-  default = ["td1-devops-prod","td1-devops-sit","td1-devops-dev"]
+  default = ["td1-devops-prod","td1-devops-sit","td1-devops-dev","td1-devops-livedemo"]
 }
 
 variable "td2_workspace_names" {
