@@ -132,7 +132,7 @@ variable "td2_workspace_names" {
 
 variable "td3_workspace_names" {
   type = list(string)
-  default = ["td3-special-prod","td2-special-sit","td2-special-dev"]
+  default = ["td3-special-prod","td3-special-sit","td3-special-dev"]
 }
 
 variable "td1_admin_name" {
