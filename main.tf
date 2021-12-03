@@ -28,11 +28,10 @@ locals {
 ## Configuration for HCP Vault stored within.
 module "tf-hcp-cluster" {
   source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.24" 
+  version = "0.0.20" 
   providers = {
     github = github.personal
   }
-  agent_pool_id = tfe_agent_pool.laptop_agent_pool
   repository_name = "tf-hcp-cluster"
   create_repo = true
   repository_private = false
@@ -48,11 +47,10 @@ module "tf-hcp-cluster" {
 
 module "tf-aws-vms" {
   source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.24" 
+  version = "0.0.20" 
   providers = {
     github = github.personal
   }
-  agent_pool_id = tfe_agent_pool.laptop_agent_pool
   repository_name = "tf-aws-vms"
   create_repo = true
   repository_private = false
