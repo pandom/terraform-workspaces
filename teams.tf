@@ -44,6 +44,11 @@ resource "tfe_team" "td2ops" {
   name = var.td2_ops_name
   organization = var.tfe_org_name
 }
+
+resource "tfe_team" "td3admin" {
+  name = var.td3_admin_name
+  organization = var.tfe_org_name
+}
 ## Define Team permissions
 resource "tfe_team_access" "td1admin" {
  for_each = { for v in tfe_workspace.td1: v.name => v }
@@ -78,9 +83,9 @@ resource "tfe_team_access" "td3ops" {
   workspace_id = each.value.id
 }
 ## Adds TD3 who can do ops for workspaces in TD2. Alternative automate this at Okta level and add user to TD2 groups.
-resource "tfe_team_access" "td3ops-special" {
+resource "tfe_team_access" "td3admin-special" {
  for_each = { for v in tfe_workspace.td2: v.name => v }
-  team_id = tfe_team.td3ops.id
-  access = "read"
+  team_id = tfe_team.td3admin.id
+  access = "admin"
   workspace_id = each.value.id
 }
