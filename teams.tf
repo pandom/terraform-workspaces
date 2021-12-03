@@ -75,14 +75,14 @@ resource "tfe_team_access" "td2ops" {
   access = "read"
   workspace_id = each.value.id
 }
-## Adding TD3 Ops
-resource "tfe_team_access" "td3ops" {
+## Adding TD3 Admin to TD3 workspaces
+resource "tfe_team_access" "td3admin" {
  for_each = { for v in tfe_workspace.td3: v.name => v }
-  team_id = tfe_team.td3ops.id
+  team_id = tfe_team.td3admin.id
   access = "read"
   workspace_id = each.value.id
 }
-## Adds TD3 who can do ops for workspaces in TD2. Alternative automate this at Okta level and add user to TD2 groups.
+## Adds TD3 who can do admin for workspaces in TD2. Alternative automate this at Okta level and add user to TD2 groups.
 resource "tfe_team_access" "td3admin-special" {
  for_each = { for v in tfe_workspace.td2: v.name => v }
   team_id = tfe_team.td3admin.id
