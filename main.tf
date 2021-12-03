@@ -48,7 +48,7 @@ module "tf-hcp-cluster" {
 
 module "tf-aws-vms" {
   source = "app.terraform.io/burkey/workspace/tfe"
-  version = "0.0.20" 
+  version = "0.0.24" 
   providers = {
     github = github.personal
   }
