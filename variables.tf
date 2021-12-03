@@ -157,3 +157,7 @@ variable "td3_ops_name" {
   type = string
   default = "td3-special-ops"
 }
+variable "td3_admin_name" {
+  type = string
+  default = "td3-special-admin"
+}
