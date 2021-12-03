@@ -32,6 +32,7 @@ module "tf-hcp-cluster" {
   providers = {
     github = github.personal
   }
+  agent_pool_id = tfe_agent_pool.laptop_agent_pool
   repository_name = "tf-hcp-cluster"
   create_repo = true
   repository_private = false
@@ -51,6 +52,7 @@ module "tf-aws-vms" {
   providers = {
     github = github.personal
   }
+  agent_pool_id = tfe_agent_pool.laptop_agent_pool
   repository_name = "tf-aws-vms"
   create_repo = true
   repository_private = false
