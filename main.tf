@@ -16,7 +16,7 @@ provider "github" {
 }
 
 data "tfe_agent_pool" "laptop_agent_pool" {
-  name          = "laptop"
+  name          = "burkey-laptop"
   organization  = "burkey"
 }
 
