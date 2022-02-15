@@ -52,6 +52,7 @@ module "tf-aws-base" {
   providers = {
     github = github.personal
   }
+
   repository_name = "tf-aws-base"
   create_repo = false
   repository_private = false
