@@ -53,7 +53,7 @@ module "tf-aws-core" {
     github = github.personal
   }
   repository_name = "tf-aws-core"
-  create_repo = true
+  create_repo = false
   repository_private = false
   oauth_token_id = var.oauth_token_id
   tf_var = merge({
