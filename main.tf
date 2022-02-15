@@ -54,7 +54,7 @@ module "tf-aws-base" {
   }
 
   repository_name = "tf-aws-base"
-  create_repo = false
+  create_repo = true
   repository_private = false
   oauth_token_id = var.oauth_token_id
   tf_var = merge({
